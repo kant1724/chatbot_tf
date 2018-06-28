@@ -119,7 +119,7 @@ class trainer():
     
     def saving_training_info(self, user, project):
         f = open(os.path.join(self.root, user, project, 'working_dir', 'training_info'), 'w', encoding='utf8')
-        f.write('Saving model...')
+        f.write('모델을 저장중입니다...')
         f.close()
     
     def clear_training_message(self, user, project, saving_step):
@@ -132,7 +132,7 @@ class trainer():
         
     def make_training_message(self, user, project, global_step, loss, step_time, saving_step):
         f1 = open(os.path.join(self.root, user, project, 'working_dir', 'training_info'), 'w', encoding='utf8')
-        f1.write('Current step: ' + str(global_step) + ', Cost: ' + str(round(loss, 5) * 100) + ', Period per step: ' + str(round(step_time, 3)))
+        f1.write('현재스텝: ' + str(global_step) + ', 오차율: ' + str(round(loss, 5) * 100) + ', 스텝당 걸린시간: ' + str(round(step_time, 3)))
         f1.close()
         f2 = open(os.path.join(self.root, user, project, 'working_dir', 'saving_step'), 'w', encoding='utf8')
         f2.write(str(saving_step))
