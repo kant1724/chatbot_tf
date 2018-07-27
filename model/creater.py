@@ -3,7 +3,7 @@ from model import seq2seq_model
 import tensorflow as tf
 
 enc_vocab_size = 1000
-dec_vocab_size = 1000
+dec_vocab_size = 5000
 max_train_data_size = 0
 
 def create_model(session, forward_only, repo, _buckets, working_directory, layer_size=256, num_layers=3, batch_size=64, learning_rate=0.03, learning_rate_decay_factor=0.99, max_gradient_norm=5.0):
